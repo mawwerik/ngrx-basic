@@ -12,6 +12,8 @@ jobs:
           node-version: 20
       - name: get node version
         run: node --version
+      - name: install Chrome
+        uses: browser-actions/setup-chrome@v2.1.0
       - name: install dependencies
         run: npm ci
       - name: run tests
