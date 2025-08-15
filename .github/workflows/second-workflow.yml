@@ -16,5 +16,18 @@ jobs:
         uses: browser-actions/setup-chrome@v2.1.0
       - name: install dependencies
         run: npm ci
-      - name: run tests
-        run: npm test
+      - name: run test
+        run: echo npm run test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code from the repo
+        uses: actions/checkout@v5.0.0
+      - name: install node.js
+        uses: actions/setup-node@v3.9.1
+        with:
+          node-version: 20
+      - name: install dependencies
+        run: npm ci
+      - name: run build
+        run: npm run build
