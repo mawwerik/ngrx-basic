@@ -19,6 +19,7 @@ jobs:
       - name: run test
         run: echo npm run test
   deploy:
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
       - name: Get the code from the repo
